@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wedding Planner plan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <style>
+        .container{
+            width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Plan Your Wedding</h3>
+        <p><a href="/Dashboard">Dashboard</a></p>
+        <p><a href="/Logout">Logout</a></p>
+        @model WeddingsValidate
+        <form asp-action="AddWedding" asp-controller="Home" method="post">
+            <span style="color:red" asp-validation-for="wedder_one"></span>
+            <p>
+                <label asp-for="wedder_one">Wedder One </label>
+                <input type='text' asp-for='wedder_one'>
+            </p>
+            <span style="color:red" asp-validation-for="wedder_two"></span>
+            <p>
+                <label asp-for="wedder_two">Wedder Two </label>
+                <input type='text' asp-for='wedder_two'>
+            </p>
+            <span style="color:red" asp-validation-for="date"></span>
+            <p>
+                <label asp-for="date">Date </label>
+                <input type="date" asp-for="date">
+            </p>
+            <span style="color:red" asp-validation-for="address"></span>
+            <p>
+                <p><label asp-for="address">Wedding Address </label></p>
+                <textarea asp-for="address" cols="30" rows="5"></textarea>
+            </p>
+            <p><input type='submit' value='Create'></p>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</body>
+</html>
